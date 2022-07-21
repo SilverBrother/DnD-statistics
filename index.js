@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 import * as cheerio from "cheerio";
 
 const URL = "https://www.dndbeyond.com/";
@@ -21,9 +21,9 @@ const getTitle = async() => {
     const parsedTitle = cheerio.load(titleData);
 
     //Extracting the data
-    const title  = parsedTitle(".mm-nav-item__label mm-nav-item__label--link");
+    const title  = parsedTitle("a.logo").text();
     //console.log(title.text());
-    console.log(parsedTitle(".mm-nav-item__label mm-nav-item__label--link").text());
+    console.log("Hi! " + title + " or ");
 };
 
 getTitle();
